@@ -35,12 +35,11 @@ def Display(stk):
         for a in range (top-1,-1,-1):
             print(stk[a])
 
-def Greater(stk):
-    if isEmpty(stk):
-        print("Stack Empty")
-    else:
-        if stk['SALARY']>30000:
-            print(stk)
+def PrintSalariesGreaterThan30K(stk):
+    print("Employees with salary greater than 30000:")
+    for item in stk:
+        if item['SALARY'] > 30000:
+            print(item['NAME'], "-", item['SALARY'])
 
 #___main______
 Stack=[]
@@ -76,8 +75,7 @@ while True:
     elif ch==4:
         Display(Stack)
     elif ch==5:
-        item=Greater(Stack)
-        print('Record with salary greater than 30000 is:',item)
+        PrintSalariesGreaterThan30K(Stack)
 
     elif ch==6:
         break
